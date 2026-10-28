@@ -1,0 +1,49 @@
+{
+ "url": "https://coreyjames.ai/stories/half-the-bytes-exactly-merged/",
+ "kind": "story",
+ "title": "Half the bytes, exactly merged",
+ "subtitle": "The INT8 history format and the SYCL attention kernels that halve ActiveKV's bus traffic, and the log-sum-exp merge that keeps the result exact",
+ "systems": [
+  "activekv"
+ ],
+ "technologies": [
+  "SYCL",
+  "KV-cache engineering",
+  "Model quantization",
+  "GPU numerical kernel design",
+  "Intel Arc GPUs",
+  "Numerical reproducibility"
+ ],
+ "stats": [
+  {
+   "value": "0.00267",
+   "label": "worst merged own-format error of the selected format"
+  },
+  {
+   "value": "12 of 12",
+   "label": "bitwise cells the hybrid route passes against its own reference"
+  },
+  {
+   "value": "26%",
+   "label": "faster decode of one query row over a 32-page compressed tile than BF16"
+  },
+  {
+   "value": "31%",
+   "label": "faster again when one launch serves two requests"
+  }
+ ],
+ "lede": "Once a model's attention history lives in host memory, decode speed is bus arithmetic. The model ActiveKV serves carries 64 KiB of key-value history per token across its sixteen dense layers, and the exact path re-reads all of it for every generated token: 2.1 GB at 32K tokens, 8.4 GB at 128K, across a copy engine that moves about 26 GB per second. A calibrated model of that arithmetic matched measured latency within a few percent at every context length. So the way to make long contexts faster was to move fewer bytes without changing the answer.",
+ "quote": "Averaging those outputs would be wrong, because each is normalised by a different denominator.",
+ "evidence": [
+  "LLM quantization (INT8 KV cache): a compressed history format with eight-bit codes and separable key scales, worst merged own-format error 0.00267 against a 0.005 gate.",
+  "SYCL kernel development on Intel Xe2: integer query-key attention on the matrix units, from 18.69 to 8.74 ms per prefill tile, nine percent faster than BF16.",
+  "Exact attention merging: partial attention across tiles and precisions combined through log-sum-exp weights with no approximation, 12 of 12 bitwise cells on the hybrid route.",
+  "KV-cache offload for LLM inference: per-token latency at 128K tokens cut from 335.2 ms on the exact tier to 190.0 ms on the hybrid tier.",
+  "GPU inference optimisation: one decode launch serving two requests 31% faster than two single calls, and one-row compressed decode 26% faster than BF16."
+ ],
+ "problem": "gpu-economics",
+ "canonical": "https://coreyjames.ai/stories/half-the-bytes-exactly-merged/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/half-the-bytes-exactly-merged"
+}

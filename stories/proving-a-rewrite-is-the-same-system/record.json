@@ -1,0 +1,46 @@
+{
+ "url": "https://coreyjames.ai/stories/proving-a-rewrite-is-the-same-system/",
+ "kind": "story",
+ "title": "Proving a rewrite is the same system",
+ "subtitle": "Parity discipline for a GPU runtime, and the day I voided over a thousand passing trials",
+ "systems": [
+  "activekv"
+ ],
+ "technologies": [
+  "C++",
+  "Python",
+  "vLLM",
+  "PyTorch XPU",
+  "Bitwise comparison",
+  "py-spy",
+  "pybind11",
+  "Numerical reproducibility"
+ ],
+ "stats": [
+  {
+   "value": "12 of 12",
+   "label": "bitwise on both routes at the release"
+  },
+  {
+   "value": "100+",
+   "label": "lane notes voided and the count rebuilt from proofs"
+  },
+  {
+   "value": "3",
+   "label": "proofs before any lane may call a route native"
+  }
+ ],
+ "lede": "A rewrite is finished when you can prove it behaves like the original. For a GPU serving runtime that means proving it on the real device, under concurrency, cancellation and shutdown, against a baseline that is not even bit-stable with itself in batched mode. Partway through the ActiveKV port I discovered that a long run of passing trials had been testing Python against Python, and the rule that came out of it now sits in the definition of done. Three distinct problems hide inside \"does the rewrite match\". The baseline is not deterministic: stock vLLM's batched output varies between its own runs, so a naive bitwise gate would fail the original against itself.",
+ "quote": "A green suite is a claim about the thing it ran.",
+ "evidence": [
+  "Numerical reproducibility and bitwise validation: parity gated bitwise only where the reference agreed with itself across two runs, 12 of 12 bitwise on both routes at the release.",
+  "Test design for native ports: differential suites rebuilt around the object types the server really passes, after stand-in suites passed on the CPU and failed at startup on the device.",
+  "C++ and native ports with parity proof: a rule that a route counts as native only with 3 proofs, the binding site, every call-site condition and the run-log order.",
+  "Engineering governance: 100+ lane notes voided and the count rebuilt from proofs after a bind-order defect showed the trials had tested Python against Python."
+ ],
+ "problem": "proof",
+ "canonical": "https://coreyjames.ai/stories/proving-a-rewrite-is-the-same-system/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/proving-a-rewrite-is-the-same-system"
+}

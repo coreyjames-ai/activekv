@@ -1,0 +1,44 @@
+{
+ "url": "https://coreyjames.ai/stories/judge-a-representation-by-the-bytes-it-stops-moving/",
+ "kind": "story",
+ "title": "Judge a representation by the bytes it stops moving",
+ "subtitle": "Rewriting an acceptance gate that kept rejecting good compression, and what it bought at 128K tokens",
+ "systems": [
+  "activekv"
+ ],
+ "technologies": [
+  "SYCL kernels",
+  "Quantisation",
+  "PCIe transfer modelling",
+  "vLLM",
+  "Intel Arc GPUs",
+  "KV-cache engineering"
+ ],
+ "stats": [
+  {
+   "value": "0.7×",
+   "label": "the per-tile speed rule I had set, withdrawn after a false rejection"
+  },
+  {
+   "value": "12 of 12",
+   "label": "bitwise cells for the hybrid route against its own reference"
+  },
+  {
+   "value": "3 of 3",
+   "label": "context sizes measured where the hybrid tier decoded faster"
+  }
+ ],
+ "lede": "Once a model's history lives in host memory, every decode step is bound by how many bytes cross the bus, and the attention kernel's speed is a rounding error. My acceptance gate for compressed history formats did not know that. It measured kernel speed per tile and kept rejecting candidates that would have won. I rewrote the gate around end-to-end economics at the target context size: bytes saved per token against GPU time added. ActiveKV stages a context's attention history across PCIe on each step. At long contexts the copy dominates. A planning analysis for the exact tier put the transfer at many times the cost of the attention itself at 128K.",
+ "quote": "A format that loses at 8K and wins at 128K is a format for long contexts, and the gate should say so.",
+ "evidence": [
+  "KV-cache offload for LLM inference: an acceptance gate rewritten from per-tile kernel cost to whole-step economics, bytes saved per token against GPU time added.",
+  "Performance modelling: a transfer model built from measured bus behaviour on the card, judging each candidate representation at its target context size.",
+  "LLM quantization (INT8 KV cache): a compressed history tier that passed 12 of 12 bitwise cells against its own reference and decoded faster at 3 of 3 context sizes.",
+  "Engineering judgment: withdrew my own 0.7x per-tile speed rule after it produced a false rejection at 128K tokens."
+ ],
+ "problem": "gpu-economics",
+ "canonical": "https://coreyjames.ai/stories/judge-a-representation-by-the-bytes-it-stops-moving/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/judge-a-representation-by-the-bytes-it-stops-moving"
+}

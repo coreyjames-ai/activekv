@@ -1,0 +1,43 @@
+{
+ "url": "https://coreyjames.ai/stories/the-observer-that-changed-the-answer/",
+ "kind": "story",
+ "title": "The observer that changed the answer",
+ "subtitle": "Discovering that my own profiler caused the serialisation it reported, and retracting a verdict I had already acted on",
+ "systems": [
+  "activekv"
+ ],
+ "technologies": [
+  "PyTorch XPU",
+  "Level Zero",
+  "GPU copy engines",
+  "Instrumented performance methodology",
+  "Intel Arc GPUs"
+ ],
+ "stats": [
+  {
+   "value": "≤ 0.21",
+   "label": "copy and compute overlap with timing-enabled events on, from 0.02"
+  },
+  {
+   "value": "≥ 0.79",
+   "label": "overlap with no events, or with release-build events only, up to 1.09"
+  },
+  {
+   "value": "3",
+   "label": "variants interleaved in one process to test the instrument"
+  }
+ ],
+ "lede": "A trace from my instrumented runtime showed that host-to-device copies were not overlapping with compute on the Intel card. I believed it, and I made a design decision on it. Then a controlled experiment showed that the timing events I had enabled to see the overlap were themselves the reason there was none. I retracted the verdict in the plan, and every overlap claim since gets an uninstrumented variant before anyone acts on it. Whether copies and compute overlap on a GPU decides the whole economics of a memory layer that stages data across the bus every step. You cannot see overlap without instrumentation, and instrumentation touches the thing it measures.",
+ "quote": "Measure the measurement.",
+ "evidence": [
+  "GPU profiling and instrumentation: showed timing-enabled events serialised host-to-device copies behind compute, overlap 0.02-0.21 with them against 0.79-1.09 without.",
+  "Performance experiment design: 3 instrumentation variants interleaved in one process, so the card, the driver and the host load were identical for all of them.",
+  "Intel GPU and SYCL/oneAPI engineering: traced timing events to timestamp commands on the compute engine that made the copy engine wait, on the Level Zero runtime.",
+  "Scientific integrity in engineering: a written retraction of my own verdict in the plan, and a standing rule that every overlap claim gets an uninstrumented control."
+ ],
+ "problem": "proof",
+ "canonical": "https://coreyjames.ai/stories/the-observer-that-changed-the-answer/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/the-observer-that-changed-the-answer"
+}

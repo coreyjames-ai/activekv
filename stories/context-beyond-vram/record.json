@@ -1,0 +1,48 @@
+{
+ "url": "https://coreyjames.ai/stories/context-beyond-vram/",
+ "kind": "story",
+ "title": "Context beyond VRAM",
+ "subtitle": "Making a 27-billion-parameter model hold more conversation than its GPU can, exactly, on one card",
+ "systems": [
+  "activekv"
+ ],
+ "technologies": [
+  "C++",
+  "SYCL / oneAPI",
+  "vLLM",
+  "PyTorch XPU",
+  "GPU memory management",
+  "KV-cache engineering",
+  "Intel Arc GPUs",
+  "Numerical reproducibility"
+ ],
+ "stats": [
+  {
+   "value": "27B",
+   "label": "parameters, a hybrid recurrent-attention model"
+  },
+  {
+   "value": "32 GB",
+   "label": "one Intel Arc Pro GPU, no second card"
+  },
+  {
+   "value": "13 of 13",
+   "label": "exact cells bit-identical to fully resident attention"
+  }
+ ],
+ "lede": "A language model remembers a conversation through its key-value cache, and every serving engine I know keeps that whole cache on the GPU. For a long document, a codebase or an agent that has been working for hours, the cache grows with every token until it is the largest thing on the card after the weights. At that point the card's memory decides how much context the model can hold. I decided the history should leave the card and the request should keep running. ActiveKV is the result: a 27-billion-parameter model serving 128,000-token histories on one 32 GB Intel Arc Pro GPU, with an exact mode that is bit-identical to fully resident attention.",
+ "quote": "Memory saved is only valuable if you decide what to buy with it.",
+ "evidence": [
+  "KV-cache offload for LLM inference: pinned host memory as the authoritative copy of attention history and the GPU as a bounded working set, serving 128K-token histories for a 27B hybrid recurrent-attention model on one 32 GB card.",
+  "Numerical reproducibility and bitwise validation: an exact tier accepted only when 13 of 13 cells matched fully resident attention bit for bit, each reference run twice and held to bitwise equality only where it agreed with itself.",
+  "vLLM internals: an offload layer built into vLLM's scheduler, attention backend and memory accounting and delivered as a patch, serving histories from 32K to 128K tokens on one card, with correctness closed before speed work began.",
+  "Intel GPU and SYCL/oneAPI engineering: a fence-safe staging pipeline in a native C++ runtime on an Intel Arc Pro GPU, each staging buffer released only after every copy and kernel that touched it had finished.",
+  "Latency engineering under concurrency: inter-token latency at 31K-token prompts with four concurrent requests cut from 274 ms to 141 ms by spending 8 GB of reclaimed GPU memory.",
+  "GPU inference optimisation: time to first token 12 to 22 percent below stock vLLM in every single-request cell, and a hybrid precision tier that cut 128K-token inter-token latency from 335 ms to 190 ms."
+ ],
+ "problem": "gpu-economics",
+ "canonical": "https://coreyjames.ai/stories/context-beyond-vram/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/context-beyond-vram"
+}

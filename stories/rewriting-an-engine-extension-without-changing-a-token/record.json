@@ -1,0 +1,47 @@
+{
+ "url": "https://coreyjames.ai/stories/rewriting-an-engine-extension-without-changing-a-token/",
+ "kind": "story",
+ "title": "Rewriting an engine extension without changing a token",
+ "subtitle": "Porting a GPU serving layer from Python to native C++ with bit-identical output, and proving every remaining line of Python was required",
+ "systems": [
+  "activekv"
+ ],
+ "technologies": [
+  "C++",
+  "pybind11",
+  "PyTorch ATen",
+  "CPython C API",
+  "vLLM",
+  "SYCL / oneAPI",
+  "Intel Arc GPUs",
+  "Numerical reproducibility"
+ ],
+ "stats": [
+  {
+   "value": "13 of 13",
+   "label": "exact-mode parity cells bitwise; 12 of 12 hybrid"
+  },
+  {
+   "value": "0",
+   "label": "Python files in the release payload"
+  },
+  {
+   "value": "77,000",
+   "label": "lines of C++ in 361 engine files"
+  }
+ ],
+ "lede": "ActiveKV began life as Python inside vLLM. That was the right way to find out whether the design worked and the wrong way to deliver it: the per-token path was slow, and the product logic sat in readable source. I moved the whole runtime to native C++ in under three weeks. In every parity cell the output was bit-identical, and a line-by-line audit cites the exact framework contract behind the one place Python still dispatches. A port like this fails in two ways. It changes behaviour, which in an inference engine means a different token somewhere in a long generation that nobody notices until a customer does.",
+ "quote": "A framework interface requiring a Python function does not mean the implementation inside that function must be Python.",
+ "evidence": [
+  "C++ and native ports with parity proof: a vLLM extension moved from Python to native C++ with 13 of 13 exact parity cells bitwise and 12 of 12 hybrid.",
+  "vLLM internals: a runtime layer inside vLLM's scheduler, worker and attention backend ported without changing those interfaces, 77,000 lines of C++ in 361 engine files.",
+  "Python and C++ interoperability: an async protocol the defence said needed Python, implemented natively through the interpreter's C API.",
+  "Technical leadership of agent teams: a seven-criterion definition of done and independent QA agents per module lane, with 0 Python files in the release payload.",
+  "Code review policy for native boundaries: an intake review that rejects new Python modules, Python imports from C++ and per-step Python callbacks on the native path."
+ ],
+ "problem": "proof",
+ "canonical": "https://coreyjames.ai/stories/rewriting-an-engine-extension-without-changing-a-token/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/rewriting-an-engine-extension-without-changing-a-token"
+}

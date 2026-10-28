@@ -1,0 +1,44 @@
+{
+ "url": "https://coreyjames.ai/stories/staging-without-a-stall/",
+ "kind": "story",
+ "title": "Staging without a stall",
+ "subtitle": "The fence-safe lifecycle and the admission arithmetic that let ActiveKV stream history across the bus without ever reading a stale buffer",
+ "systems": [
+  "activekv"
+ ],
+ "technologies": [
+  "C++",
+  "GPU memory management",
+  "KV-cache engineering",
+  "PyTorch XPU",
+  "Intel Arc GPUs"
+ ],
+ "stats": [
+  {
+   "value": "12 of 12",
+   "label": "bitwise cells on both routes, staged against fully resident attention"
+  },
+  {
+   "value": "14.5",
+   "label": "tokens per second, up from 8.4, four 31,744-token requests"
+  },
+  {
+   "value": "33.2 GB",
+   "label": "device peak on the same run, up from 24.8: freed memory put to work"
+  }
+ ],
+ "lede": "Each dense layer in ActiveKV needs its history on the device for one attention call. The copy in is asynchronous, the attention is asynchronous, and the new token's keys and values must flow back to the host copy. A staging buffer reused one event too early reads another layer's or another step's history, and the attention output looks plausible. Nothing crashes. I designed the staging lifecycle so that this class of bug cannot happen, and the admission arithmetic so that the card refuses what it cannot serve instead of degrading. The engine owns a dedicated host-to-device queue, a dedicated device-to-host queue, and the attention compute queue.",
+ "quote": "Nothing is recycled on an uncertain fence.",
+ "evidence": [
+  "Asynchronous GPU memory management: a fence-safe staging lifecycle keyed by leases, in which nothing is recycled on an uncertain fence.",
+  "Numerical reproducibility and bitwise validation: whole-layer staging accepted only on bit-identical logits against fully resident attention, 12 of 12 on both routes.",
+  "GPU memory admission control: explicit page pools with targets, bursts and least-recently-active reclamation that refuses a request rather than degrading it.",
+  "Latency engineering under concurrency: four 31,744-token requests on the quiet benchmark machine went from 350 to 267 ms inter-token latency and 8.4 to 14.5 tokens per second.",
+  "GPU memory reuse: device peak raised from 24.8 to 33.2 GB to spend memory freed by host-resident history on decode speed."
+ ],
+ "problem": "gpu-economics",
+ "canonical": "https://coreyjames.ai/stories/staging-without-a-stall/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/staging-without-a-stall"
+}

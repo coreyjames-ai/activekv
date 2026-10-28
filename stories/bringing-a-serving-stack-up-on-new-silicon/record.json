@@ -1,0 +1,44 @@
+{
+ "url": "https://coreyjames.ai/stories/bringing-a-serving-stack-up-on-new-silicon/",
+ "kind": "story",
+ "title": "Bringing a serving stack up on new silicon",
+ "subtitle": "Patching Intel's Xe2 kernel stack where it had gaps, with outputs that stayed identical",
+ "systems": [
+  "activekv"
+ ],
+ "technologies": [
+  "SYCL / DPC++",
+  "oneDNN",
+  "CUTLASS and CuTe",
+  "Intel XPU kernels",
+  "Intel Arc GPUs",
+  "GPU kernel engineering"
+ ],
+ "stats": [
+  {
+   "value": "48",
+   "label": "special-value combinations checked in one exact, flat rewrite"
+  },
+  {
+   "value": "2",
+   "label": "attention candidates rejected and kept as negatives"
+  },
+  {
+   "value": "5",
+   "label": "memory fences added for a synchronisation the original lacked"
+  }
+ ],
+ "lede": "The Intel Arc Pro GPU is a new architecture, and the open kernel stacks that serve large models on it had gaps when I started: a GEMM path that chose the wrong tile for prefill, a recurrent-layer prefill with poor occupancy and a missing synchronisation, a missing attention statistic my memory layer needs, and run-to-run variance in some GEMM shapes. I patched the vendor's own sources inside the vendor's toolchain, with an identical-output gate on every change. Outputs stayed unchanged on the gated path. Serving on brand-new hardware means working above a kernel stack that is still catching up with the silicon.",
+ "quote": "Exactness is a property I want in the product.",
+ "evidence": [
+  "Intel GPU and SYCL/oneAPI engineering: patched the vendor's open kernel stacks on Intel Xe2 hardware to cut cold 32K-token prefill from 21.54 s to 17.23 s with identical outputs.",
+  "GPU kernel development: a recurrent-layer prefill fix for occupancy, output split and a missing synchronisation, with 5 memory fences added.",
+  "Numerical reproducibility and bitwise validation: an exact kernel rewrite checked across 48 special-value combinations, kept for exactness with no whole-workload gain.",
+  "Performance engineering discipline: one change, one patch, one gate, with 2 attention candidates rejected and kept as documented negatives."
+ ],
+ "problem": "gpu-economics",
+ "canonical": "https://coreyjames.ai/stories/bringing-a-serving-stack-up-on-new-silicon/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/bringing-a-serving-stack-up-on-new-silicon"
+}

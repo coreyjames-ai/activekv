@@ -1,0 +1,50 @@
+{
+ "url": "https://coreyjames.ai/systems/activekv/",
+ "kind": "system",
+ "title": "ActiveKV",
+ "subtitle": "An inference-memory layer for vLLM: the conversation's history in host RAM, the GPU as a bounded working set",
+ "systems": [],
+ "technologies": [
+  "C++",
+  "SYCL / oneAPI",
+  "vLLM",
+  "PyTorch XPU",
+  "pybind11",
+  "GPU memory management",
+  "KV-cache engineering",
+  "Intel Arc GPUs",
+  "Numerical reproducibility"
+ ],
+ "stats": [
+  {
+   "value": "13 of 13",
+   "label": "exact cells bit-identical to fully resident attention at the port, 12 of 12 hybrid"
+  },
+  {
+   "value": "1 of 867",
+   "label": "former Python dispatch sites still in Python, kept by a cited framework contract"
+  },
+  {
+   "value": "12–22%",
+   "label": "lower time to first token than stock vLLM, single request, every context length"
+  },
+  {
+   "value": "20%",
+   "label": "faster cold 32K-token prefill from the Xe2 kernel patches"
+  }
+ ],
+ "lede": "Every serving engine I have worked with assumes a model's working memory lives on the GPU. That assumption is why a 32 GB card decides how much context a model can hold. I decided to remove it. ActiveKV is an inference-memory layer I architected for vLLM: the conversation's attention history lives in pinned host RAM, and the GPU keeps a bounded, budgeted working set. On one Intel Arc Pro GPU, a 27-billion-parameter model serves 128,000-token histories. On a single 8,000-token request it beats stock vLLM on time to first token, inter-token latency and throughput.",
+ "quote": "Context length should be a host-memory budget, and it should stop being a hardware limit.",
+ "evidence": [
+  "KV-cache offload for LLM inference: attention history in host RAM with the GPU as a bounded working set, on one Intel Arc Pro GPU with 32 GB.",
+  "C++ and native ports with parity proof: a Python runtime ported to C++ with 13 of 13 exact cells bit-identical and 1 of 867 dispatch sites left in Python under a cited contract.",
+  "Inference serving architecture: 12-22% lower time to first token than stock vLLM on a single request at every context length.",
+  "Intel GPU and SYCL/oneAPI engineering: kernel patches on Xe2 for 20% faster cold 32K-token prefill, each gated on identical outputs.",
+  "vLLM internals: delivered as compiled binaries plus a patch to the user's own vLLM, with no Python of mine in the release payload.",
+  "Observability and instrumentation: per-token tracing from scheduler to device to client at selectable levels, with its own overhead measured."
+ ],
+ "canonical": "https://coreyjames.ai/systems/activekv/",
+ "datePublished": "2026-10-28",
+ "author": "Corey James",
+ "github": "https://github.com/coreyjames-ai/activekv"
+}
