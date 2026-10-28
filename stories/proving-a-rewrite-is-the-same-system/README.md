@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/proving-a-rewrite-is-the-same-system/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735116 (this page is a chapter of the system's report)  
 Systems: [ActiveKV](https://github.com/coreyjames-ai/activekv)  
 Technologies: [C++](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/c-plus-plus) · [Determinism and numerical reproducibility](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/determinism-and-numerical-reproducibility) · [Evidence-gated acceptance](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/evidence-gated-acceptance) · [Independent verification and adversarial review](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/independent-verification-and-adversarial-review) · [Large-scale refactoring with parity proof](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/large-scale-refactoring-with-parity-proof) · [PyTorch](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/pytorch) · [Python](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/python) · [oneDNN](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/onednn) · [pybind11](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/pybind11) · [vLLM](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/vllm)  
 Skills: [C++ and native ports with parity proof](https://github.com/coreyjames-ai/portfolio/tree/main/skills/c-and-native-ports-with-parity-proof) · [evidence-gated acceptance](https://github.com/coreyjames-ai/portfolio/tree/main/skills/evidence-gated-acceptance)  
@@ -91,7 +92,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "Proving a rewrite is the same system." coreyjames.ai, 2026. https://coreyjames.ai/stories/proving-a-rewrite-is-the-same-system/
+Corey James. "Proving a rewrite is the same system." coreyjames.ai, 2026. https://coreyjames.ai/stories/proving-a-rewrite-is-the-same-system/ In: the ActiveKV technical report, doi:10.5281/zenodo.23735116.
 
 ```bibtex
 @misc{coreyjames-proving-a-rewrite-is-the-same-system,
@@ -99,7 +100,8 @@ Corey James. "Proving a rewrite is the same system." coreyjames.ai, 2026. https:
   title = {Proving a rewrite is the same system},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/proving-a-rewrite-is-the-same-system/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/proving-a-rewrite-is-the-same-system}
+  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/proving-a-rewrite-is-the-same-system},
+  doi = {10.5281/zenodo.23735116}
 }
 ```
 

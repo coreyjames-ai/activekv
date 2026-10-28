@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/bringing-a-serving-stack-up-on-new-silicon/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735116 (this page is a chapter of the system's report)  
 Systems: [ActiveKV](https://github.com/coreyjames-ai/activekv)  
 Technologies: [CUTLASS](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/cutlass) · [GPU numerical kernel design](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/gpu-numerical-kernel-design) · [Intel Arc GPUs](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/intel-arc-gpus) · [Intel oneAPI](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/intel-oneapi) · [SYCL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/sycl) · [oneDNN](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/onednn)  
 Skills: [Intel GPU and SYCL/oneAPI engineering](https://github.com/coreyjames-ai/portfolio/tree/main/skills/intel-gpu-and-sycl-oneapi-engineering) · [GPU inference optimisation](https://github.com/coreyjames-ai/portfolio/tree/main/skills/gpu-inference-optimisation) · [AI-assisted engineering methodology](https://github.com/coreyjames-ai/portfolio/tree/main/skills/ai-assisted-engineering-methodology) · [vLLM internals](https://github.com/coreyjames-ai/portfolio/tree/main/skills/vllm-internals)  
@@ -93,7 +94,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "Bringing a serving stack up on new silicon." coreyjames.ai, 2026. https://coreyjames.ai/stories/bringing-a-serving-stack-up-on-new-silicon/
+Corey James. "Bringing a serving stack up on new silicon." coreyjames.ai, 2026. https://coreyjames.ai/stories/bringing-a-serving-stack-up-on-new-silicon/ In: the ActiveKV technical report, doi:10.5281/zenodo.23735116.
 
 ```bibtex
 @misc{coreyjames-bringing-a-serving-stack-up-on-new-silicon,
@@ -101,7 +102,8 @@ Corey James. "Bringing a serving stack up on new silicon." coreyjames.ai, 2026. 
   title = {Bringing a serving stack up on new silicon},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/bringing-a-serving-stack-up-on-new-silicon/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/bringing-a-serving-stack-up-on-new-silicon}
+  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/bringing-a-serving-stack-up-on-new-silicon},
+  doi = {10.5281/zenodo.23735116}
 }
 ```
 

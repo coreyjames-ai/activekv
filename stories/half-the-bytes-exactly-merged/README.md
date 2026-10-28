@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/half-the-bytes-exactly-merged/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735116 (this page is a chapter of the system's report)  
 Systems: [ActiveKV](https://github.com/coreyjames-ai/activekv)  
 Technologies: [GPU numerical kernel design](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/gpu-numerical-kernel-design) · [Intel Arc GPUs](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/intel-arc-gpus) · [KV-cache engineering](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/kv-cache-engineering) · [Model quantization](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/model-quantization) · [SYCL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/sycl)  
 Skills: [KV-cache offload for LLM inference](https://github.com/coreyjames-ai/portfolio/tree/main/skills/kv-cache-offload-for-llm-inference) · [GPU inference optimisation](https://github.com/coreyjames-ai/portfolio/tree/main/skills/gpu-inference-optimisation) · [inference serving architecture](https://github.com/coreyjames-ai/portfolio/tree/main/skills/inference-serving-architecture) · [Intel GPU and SYCL/oneAPI engineering](https://github.com/coreyjames-ai/portfolio/tree/main/skills/intel-gpu-and-sycl-oneapi-engineering)  
@@ -87,7 +88,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "Half the bytes, exactly merged." coreyjames.ai, 2026. https://coreyjames.ai/stories/half-the-bytes-exactly-merged/
+Corey James. "Half the bytes, exactly merged." coreyjames.ai, 2026. https://coreyjames.ai/stories/half-the-bytes-exactly-merged/ In: the ActiveKV technical report, doi:10.5281/zenodo.23735116.
 
 ```bibtex
 @misc{coreyjames-half-the-bytes-exactly-merged,
@@ -95,7 +96,8 @@ Corey James. "Half the bytes, exactly merged." coreyjames.ai, 2026. https://core
   title = {Half the bytes, exactly merged},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/half-the-bytes-exactly-merged/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/half-the-bytes-exactly-merged}
+  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/half-the-bytes-exactly-merged},
+  doi = {10.5281/zenodo.23735116}
 }
 ```
 

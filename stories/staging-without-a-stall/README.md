@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/staging-without-a-stall/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735116 (this page is a chapter of the system's report)  
 Systems: [ActiveKV](https://github.com/coreyjames-ai/activekv)  
 Technologies: [C++](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/c-plus-plus) · [GPU memory management](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/gpu-memory-management) · [Intel Arc GPUs](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/intel-arc-gpus) · [KV-cache engineering](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/kv-cache-engineering)  
 Skills: [GPU inference optimisation](https://github.com/coreyjames-ai/portfolio/tree/main/skills/gpu-inference-optimisation) · [vLLM internals](https://github.com/coreyjames-ai/portfolio/tree/main/skills/vllm-internals) · [inference serving architecture](https://github.com/coreyjames-ai/portfolio/tree/main/skills/inference-serving-architecture) · [AI-assisted engineering methodology](https://github.com/coreyjames-ai/portfolio/tree/main/skills/ai-assisted-engineering-methodology)  
@@ -82,7 +83,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "Staging without a stall." coreyjames.ai, 2026. https://coreyjames.ai/stories/staging-without-a-stall/
+Corey James. "Staging without a stall." coreyjames.ai, 2026. https://coreyjames.ai/stories/staging-without-a-stall/ In: the ActiveKV technical report, doi:10.5281/zenodo.23735116.
 
 ```bibtex
 @misc{coreyjames-staging-without-a-stall,
@@ -90,7 +91,8 @@ Corey James. "Staging without a stall." coreyjames.ai, 2026. https://coreyjames.
   title = {Staging without a stall},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/staging-without-a-stall/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/staging-without-a-stall}
+  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/staging-without-a-stall},
+  doi = {10.5281/zenodo.23735116}
 }
 ```
 

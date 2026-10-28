@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: Cite this repository's report by its DOI.
+type: dataset
+title: "ActiveKV: An inference-memory layer for vLLM: the conversation's history in host RAM, the GPU as a bounded working set"
+authors:
+  - given-names: Corey
+    family-names: James
+    orcid: https://orcid.org/0009-0008-7246-963X
+doi: 10.5281/zenodo.23735116
+date-released: 2026-10-28
+url: https://coreyjames.ai/systems/activekv/
+repository-code: https://github.com/coreyjames-ai/activekv
+license: CC-BY-4.0
+abstract: "An inference-memory layer for vLLM: the conversation's history in host RAM, the GPU as a bounded working set"

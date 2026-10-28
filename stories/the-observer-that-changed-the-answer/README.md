@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/the-observer-that-changed-the-answer/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735116 (this page is a chapter of the system's report)  
 Systems: [ActiveKV](https://github.com/coreyjames-ai/activekv)  
 Technologies: [GPU profiling and tracing](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/gpu-profiling-and-tracing) · [Intel Arc GPUs](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/intel-arc-gpus) · [Intel oneAPI](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/intel-oneapi) · [LD_PRELOAD symbol interposition](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/ld-preload-symbol-interposition) · [Performance engineering and benchmarking](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/performance-engineering-and-benchmarking) · [PyTorch](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/pytorch)  
 Skills: [Intel GPU and SYCL/oneAPI engineering](https://github.com/coreyjames-ai/portfolio/tree/main/skills/intel-gpu-and-sycl-oneapi-engineering) · [evidence-gated acceptance](https://github.com/coreyjames-ai/portfolio/tree/main/skills/evidence-gated-acceptance)  
@@ -82,7 +83,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "The observer that changed the answer." coreyjames.ai, 2026. https://coreyjames.ai/stories/the-observer-that-changed-the-answer/
+Corey James. "The observer that changed the answer." coreyjames.ai, 2026. https://coreyjames.ai/stories/the-observer-that-changed-the-answer/ In: the ActiveKV technical report, doi:10.5281/zenodo.23735116.
 
 ```bibtex
 @misc{coreyjames-the-observer-that-changed-the-answer,
@@ -90,7 +91,8 @@ Corey James. "The observer that changed the answer." coreyjames.ai, 2026. https:
   title = {The observer that changed the answer},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/the-observer-that-changed-the-answer/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/the-observer-that-changed-the-answer}
+  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/the-observer-that-changed-the-answer},
+  doi = {10.5281/zenodo.23735116}
 }
 ```
 

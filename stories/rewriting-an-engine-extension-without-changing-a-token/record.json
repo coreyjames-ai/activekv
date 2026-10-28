@@ -43,5 +43,8 @@
  "canonical": "https://coreyjames.ai/stories/rewriting-an-engine-extension-without-changing-a-token/",
  "datePublished": "2026-10-28",
  "author": "Corey James",
- "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/rewriting-an-engine-extension-without-changing-a-token"
+ "github": "https://github.com/coreyjames-ai/activekv/tree/main/stories/rewriting-an-engine-extension-without-changing-a-token",
+ "doi": "10.5281/zenodo.23735116",
+ "doi_relation": "part-of",
+ "author_orcid": "https://orcid.org/0009-0008-7246-963X"
 }

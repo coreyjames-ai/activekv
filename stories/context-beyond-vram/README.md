@@ -4,6 +4,7 @@
 
 Canonical: https://coreyjames.ai/stories/context-beyond-vram/  
 Author: Corey James · Published: 2026-10-28 · Kind: story  
+DOI: https://doi.org/10.5281/zenodo.23735116 (this page is a chapter of the system's report)  
 Systems: [ActiveKV](https://github.com/coreyjames-ai/activekv)  
 Technologies: [C++](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/c-plus-plus) · [CUTLASS](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/cutlass) · [GPU memory management](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/gpu-memory-management) · [Intel Arc GPUs](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/intel-arc-gpus) · [Intel oneAPI](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/intel-oneapi) · [KV-cache engineering](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/kv-cache-engineering) · [Model families and types](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/model-families-and-types) · [OpenAI-compatible API](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/openai-compatible-api) · [PyTorch](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/pytorch) · [SYCL](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/sycl) · [vLLM](https://github.com/coreyjames-ai/portfolio/tree/main/technologies/vllm)  
 Skills: [KV-cache offload for LLM inference](https://github.com/coreyjames-ai/portfolio/tree/main/skills/kv-cache-offload-for-llm-inference) · [Intel GPU and SYCL/oneAPI engineering](https://github.com/coreyjames-ai/portfolio/tree/main/skills/intel-gpu-and-sycl-oneapi-engineering) · [GPU inference optimisation](https://github.com/coreyjames-ai/portfolio/tree/main/skills/gpu-inference-optimisation) · [inference serving architecture](https://github.com/coreyjames-ai/portfolio/tree/main/skills/inference-serving-architecture)  
@@ -103,7 +104,7 @@ Each line is a claim the canonical page supports, with the figure as the page st
 
 ## Citation
 
-Corey James. "Context beyond VRAM." coreyjames.ai, 2026. https://coreyjames.ai/stories/context-beyond-vram/
+Corey James. "Context beyond VRAM." coreyjames.ai, 2026. https://coreyjames.ai/stories/context-beyond-vram/ In: the ActiveKV technical report, doi:10.5281/zenodo.23735116.
 
 ```bibtex
 @misc{coreyjames-context-beyond-vram,
@@ -111,7 +112,8 @@ Corey James. "Context beyond VRAM." coreyjames.ai, 2026. https://coreyjames.ai/s
   title = {Context beyond VRAM},
   year = {2026},
   howpublished = {\url{https://coreyjames.ai/stories/context-beyond-vram/}},
-  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/context-beyond-vram}
+  note = {GitHub copy: https://github.com/coreyjames-ai/activekv/tree/main/stories/context-beyond-vram},
+  doi = {10.5281/zenodo.23735116}
 }
 ```
 
